@@ -1,6 +1,6 @@
 # toasterjs
 
-*toaster messages for your  frontend*
+##toaster messages for your  frontend*
 
 
 ![image](success.png)
