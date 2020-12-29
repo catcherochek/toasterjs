@@ -5,22 +5,23 @@ class Toaster{
   MSG_SUCCESS = 3;
   MSG_INFO = 4;
   afterDiv = "body";
-
+  inTheEnd = false;
   attachEvents(tis){
     document.querySelectorAll('.toast__close').forEach(elem => {
         elem.addEventListener('click',function(e){
           e.preventDefault();
           var parent = e.currentTarget.parentNode;
           parent.style.opacity = 1;
-          var glob_e = parent
+          var glob_e = parent;
           this.fadeOut(parent);
         });
     });
     Toaster.prototype.mountHTML();
   }
 
-    constructor (afterDiv = "body"){
-        
+    constructor (afterDiv = "body",inTheEnd = true){
+        this.afterDiv = afterDiv;
+        this.inTheEnd = inTheEnd;
         if(window.addEventListener){
           window.addEventListener('load',this.attachEvents,this );
         }else{
@@ -32,7 +33,7 @@ class Toaster{
     fadeOut(e,hideshow = 100){(
       e.style.opacity-=.1)<=0?e.style.display="none":setTimeout(this.fadeOut.bind(this),hideshow,e,hideshow)}
 
-    mountHTML(aftrDiv="body",inTheEnd = true) {
+    mountHTML(afterDiv="body",inTheEnd = true) {
         var newNode = document.createElement("div");
         newNode.setAttribute("class", "toast__container"); 
         newNode.innerHTML = `
@@ -257,9 +258,14 @@ background-color:#FFC007;
 }
   </style>
         `;
+        if (inTheEnd){
+          var parentNode = document.querySelector(afterDiv);
+          parentNode.appendChild(newNode);
+        }else{
+          var parentNode = document.querySelector(this.afterDiv);
+          parentNode.insertBefore(newNode);
+        }
 
-        var parentNode = document.querySelector(aftrDiv);
-        parentNode.appendChild(newNode);
 
 
 
@@ -303,4 +309,3 @@ background-color:#FFC007;
     
 
 }
-var toaster = new Toaster();
