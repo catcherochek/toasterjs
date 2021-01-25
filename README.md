@@ -12,13 +12,13 @@
 
 ` <script src="toaster.js"></script>`
 
-**And then in script create an object**
+**create an object whenaewer you want**
 
 ` <script>
     var toaster = new Toaster();
   </script>`
   
-  **After that you can call**
+  **Simply call an object when needed**
   
   `toaster.theToast(message,type)`
   
