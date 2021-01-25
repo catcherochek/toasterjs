@@ -1,0 +1,27 @@
+Alias of html:5
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <script src="toaster.js"></script>`
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+    <script>
+        var toaster = new Toaster(".toastshow");
+    </script>`
+    <div class="toastshow" style="height: 100px; background-color: aqua;"></div>
+    <div style="text-align: center; padding: 10px;">
+        <button  class="btn btn-danger" onclick="toaster.theToast('danger message',toaster.MSG_ERROR)">danger</button>
+        <button class="btn btn-info" onclick="toaster.theToast('warning message',toaster.MSG_WARNING)">warning</button>
+        <button class="btn btn-warning" onclick="toaster.theToast('info message',toaster.MSG_INFO)">Info</button>
+        <button class="btn btn-success" onclick="toaster.theToast('success message',toaster.MSG_SUCCESS)">Success</button>
+    </div>
+    <style>
+
+    </style>
+
+</body>
+</html>
