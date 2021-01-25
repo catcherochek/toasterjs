@@ -27,3 +27,6 @@
   MSG_WARNING = 2;
   MSG_SUCCESS = 3;
   MSG_INFO = 4;
+
+
+[Demo here](http://example.com/){: .btn .btn-outline }
