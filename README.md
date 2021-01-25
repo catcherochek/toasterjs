@@ -29,4 +29,4 @@
   MSG_INFO = 4;
 
 
-[Demo here](http://example.com/){: .btn .btn-outline }
+[Demo here](https://catcherochek.github.io/toasterjs/){: .btn .btn-outline }
